@@ -9,11 +9,17 @@ class SandwichesController < ApplicationController
                     .limit(10)
   end
 
+  def replace
+    @sandwich = Sandwich
+                    .all
+                    .select { | sandwich | !current_user.voted_for?(sandwich)}
+                    .first
+    render json: @sandwich
+  end
+
   # GET /sandwiches/1
   # GET /sandwiches/1.json
   def show
-    respond_to do | format |
-    end
   end
 
   # GET /sandwiches/new

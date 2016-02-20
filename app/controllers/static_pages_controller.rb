@@ -4,9 +4,7 @@ class StaticPagesController < ApplicationController
 	def home
 		@sandwiches = Sandwich
 										.all
-										.select 
-										{ | sandwich | !current_user.voted_for(sandwich)}
-										.limit(2)
+										.select { | sandwich | !current_user.voted_for?(sandwich)}
 		@sandwich1 = @sandwiches[0]
 		@sandwich2 = @sandwiches[1]
 	end
