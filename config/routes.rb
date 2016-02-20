@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  post "/sandwiches/:id/upvote" => "sandwich_votes#upvote"
-  post "/sandwiches/:id/downvote" => "sandwich_votes#downvote"
+  post "/sandwiches/vote" => "sandwich_votes#vote"
 
   resources :sandwiches
   devise_for :users

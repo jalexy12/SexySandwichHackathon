@@ -1,22 +1,15 @@
 class SandwichVotesController < ApplicationController
 	protect_from_forgery with: :null_session
-	
-	def upvote 
-		@sandwich = Sandwich.find_by_id(params[:id])
-		if !@sandwich
+
+	def vote
+		@sandwich = Sandwich.find_by_id(params[:sandwich_good_id])
+		@sandwich2 = Sandwich.find_by_id(params[:sandwich_bad_id])
+
+		if !@sandwich || !@sandwich2
 			render json: { error: "Sandwich not found"}, status 404
 		else
 			@sandwich.liked_by(current_user)
-			render json: @sandwich.votes_for.size
-		end
-	end
-
-	def downvote
-		@sandwich = Sandwich.find_by_id(params[:id])
-		if !@sandwich
-			render json: { error: "Sandwich not found"}, status 404
-		else
-			@sandwich.disliked_by(current_user)
+			@sandwich2.disliked_by(current_user)
 			render json: @sandwich.votes_for.size
 		end
 	end
