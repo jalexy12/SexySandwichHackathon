@@ -1,6 +1,6 @@
 class SandwichesController < ApplicationController
   before_action :set_sandwich, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, only: [:replace]
+  # skip_before_action :verify_authenticity_token, only: [:replace]
 
   # GET /sandwiches
   # GET /sandwiches.json

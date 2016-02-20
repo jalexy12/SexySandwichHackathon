@@ -17,7 +17,16 @@
 	text-align: center;
 }
 
-.left-sandwich-img .right-sandwich-img{
+.left-sandwich-img{
+	display: block;
+	margin: 0 auto;
+	border: 5px solid #fff;
+	border-radius: 10px;
+	height: 350px;
+	width: 300px;
+}
+
+.right-sandwich-img{
 	display: block;
 	margin: 0 auto;
 	border: 5px solid #fff;

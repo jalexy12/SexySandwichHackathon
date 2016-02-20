@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   post "/sandwiches/vote" => "sandwich_votes#vote"
 
   resources :sandwiches
   post "/sandwiches/replace" => "sandwiches#replace"
   devise_for :users
   get '/' => 'static_pages#home'
-=======
-  get '/' => 'static_pages#home'
-
-  post "/sandwiches/vote" => "sandwich_votes#vote"
-  post "/sandwiches/replace" => "sandwiches#replace"
->>>>>>> f2be187c14372c209aa58bb811e121f2a42c7ca8
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

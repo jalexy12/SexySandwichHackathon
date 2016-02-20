@@ -20,7 +20,7 @@ $(document).on("ready", function() {
 function getSandwich(sandwichId) {
 	var leftSandwich = $(".js-btn-left").data("id")
 	$.ajax({
-		url: "/sandiwches/replace",
+		url: "/sandwiches/replace",
 		success: function(response) {
 			if (sandwichId == leftSandwich) {
 				$(".left-sandwich-img").prop("src", response.image_url);
@@ -44,7 +44,7 @@ function upLeftDownRight(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
-			getNewSandwich(badSandwich);
+			getSandwich(badSandwich);
 		},
 		error: function() {
 
@@ -61,7 +61,7 @@ function upRightDownLeft(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
-			getNewSandwich(badSandwich);
+			getSandwich(badSandwich);
 		},
 		error: function() {
 
