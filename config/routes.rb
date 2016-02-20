@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => "callbacks#instagram"
+  get '/' => 'static_pages#home'
+  get '/oauth/callbacks' => "callbacks#instagram"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
