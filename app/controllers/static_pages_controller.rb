@@ -2,6 +2,12 @@ class StaticPagesController < ApplicationController
 	before_action :authenticate_user!
 
 	def home
-		@sandwiches = current_user.get_voted Sandwich		
+		@sandwiches = Sandwich
+										.all
+										.select 
+										{ | sandwich | !current_user.voted_for(sandwich)}
+										.limit(2)
+		@sandwich1 = @sandwiches[0]
+		@sandwich2 = @sandwiches[1]
 	end
 end

@@ -8,7 +8,7 @@ $(document).on("ready", function() {
 		upLeftDownRight(goodSandwich, badSandwich);
 	})
 
-	$(",js-btn-right").on("click", function() {
+	$(".js-btn-right").on("click", function() {
 		var goodSandwich = $(".js-btn-right").data("id");
 		var badSandwich = $(".js-btn-left").data("id");
 		upRightDownLeft(goodSandwich, badSandwich);
@@ -26,6 +26,7 @@ function upLeftDownRight(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
+			console.log("what")
 		},
 		error: function() {
 
@@ -42,6 +43,7 @@ function upRightDownLeft(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
+			console.log("what")
 		},
 		error: function() {
 
