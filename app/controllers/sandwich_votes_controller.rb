@@ -10,7 +10,7 @@ class SandwichVotesController < ApplicationController
 		else
 			@sandwich.liked_by(current_user)
 			@sandwich2.disliked_by(current_user)
-			render json: @sandwich.votes_for.size
+			render json: @sandwich.votes_for.size, status: 200
 		end
 	end
 end
