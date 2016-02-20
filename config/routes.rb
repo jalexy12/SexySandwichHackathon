@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sandwiches
   devise_for :users
   get '/' => 'static_pages#home'
   get '/oauth/callbacks' => "callbacks#instagram"
