@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220082131) do
+ActiveRecord::Schema.define(version: 20160220084441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,19 @@ ActiveRecord::Schema.define(version: 20160220082131) do
   create_table "sandwiches", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "sandwich_image"
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "sandwiches", ["cached_votes_down"], name: "index_sandwiches_on_cached_votes_down", using: :btree
+  add_index "sandwiches", ["cached_votes_score"], name: "index_sandwiches_on_cached_votes_score", using: :btree
+  add_index "sandwiches", ["cached_votes_total"], name: "index_sandwiches_on_cached_votes_total", using: :btree
+  add_index "sandwiches", ["cached_votes_up"], name: "index_sandwiches_on_cached_votes_up", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
