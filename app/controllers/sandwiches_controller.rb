@@ -69,6 +69,6 @@ class SandwichesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sandwich_params
-      params.require(:sandwich).permit(:name, :description)
+      params.require(:sandwich).permit(:name, :description, :sandwich_image)
     end
 end

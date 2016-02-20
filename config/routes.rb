@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post "/sandwiches/:id/upvote" => "sandwich_votes#upvote"
+  post "/sandwiches/:id/downvote" => "sandwich_votes#downvote"
+
   resources :sandwiches
   devise_for :users
   get '/' => 'static_pages#home'
