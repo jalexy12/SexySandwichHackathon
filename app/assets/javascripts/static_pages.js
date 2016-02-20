@@ -25,8 +25,7 @@ function upLeftDownRight(goodSandwich, badSandwich) {
 			sandwich_good_id: goodSandwich,
 			sandwich_bad_id: badSandwich
 		},
-		success: function(response) {
-			console.log("Hey", response);
+		success: function() {
 		},
 		error: function() {
 
@@ -42,8 +41,7 @@ function upRightDownLeft(goodSandwich, badSandwich) {
 			sandwich_good_id: goodSandwich,
 			sandwich_bad_id: badSandwich
 		},
-		success: function(response) {
-			console.log("Hey", response);
+		success: function() {
 		},
 		error: function() {
 
