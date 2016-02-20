@@ -27,9 +27,7 @@ module SexySandwichHackathon
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
-    config.client_id = "9f00bebff3c542e185a6bd6080cd9e17"
-    config.client_secret = "15156c8aa3ce497f9310c0b1d71c2c32"
+    # config.i18n.default_locale = :d
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
