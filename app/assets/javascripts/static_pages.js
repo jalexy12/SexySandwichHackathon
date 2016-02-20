@@ -8,7 +8,7 @@ $(document).on("ready", function() {
 		upLeftDownRight(goodSandwich, badSandwich);
 	})
 
-	$(",js-btn-right").on("click", function() {
+	$(".js-btn-right").on("click", function() {
 		var goodSandwich = $(".js-btn-right").data("id");
 		var badSandwich = $(".js-btn-left").data("id");
 		upRightDownLeft(goodSandwich, badSandwich);
@@ -16,6 +16,24 @@ $(document).on("ready", function() {
 })
 
 //----------------------------------
+
+function getSandwich(sandwichId) {
+	var leftSandwich = $(".js-btn-left").data("id")
+	$.ajax({
+		url: "/sandiwches/replace",
+		success: function(response) {
+			if (sandwichId == leftSandwich) {
+				$(".left-sandwich-img").prop("src", response.image_url);
+				$(".js-btn-left").data("id", response.id);
+			}
+			else {
+				$(".right-sandwich-img").prop("src", response.image_url);
+				$(".js-btn-right").data("id", response.id);
+
+			}
+		}
+	})
+}
 
 function upLeftDownRight(goodSandwich, badSandwich) {
 	$.ajax({
@@ -26,6 +44,7 @@ function upLeftDownRight(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
+			getNewSandwich(badSandwich);
 		},
 		error: function() {
 
@@ -42,6 +61,7 @@ function upRightDownLeft(goodSandwich, badSandwich) {
 			sandwich_bad_id: badSandwich
 		},
 		success: function() {
+			getNewSandwich(badSandwich);
 		},
 		error: function() {
 
