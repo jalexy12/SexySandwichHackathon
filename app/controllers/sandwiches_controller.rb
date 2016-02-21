@@ -4,6 +4,7 @@ class SandwichesController < ApplicationController
   # GET /sandwiches.json
   def index
     @sandwiches = Sandwich
+                    .includes(:comments)
                     .order("cached_votes_up DESC")
                     .limit(9)
   end

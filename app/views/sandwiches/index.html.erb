@@ -1,3 +1,4 @@
+<!-- Top 9 Sandwiches -->
 <div class="row">
   <% @sandwiches.each do | sandwich | %>
     <div data-sandwich-id="<%= sandwich.id  %>" data-sandwich-name="<%= sandwich.name %>" data-sandwich-image="<%= sandwich.sandwich_image.url %>" class="sandwich-index-container col-sm-12">
@@ -9,7 +10,7 @@
             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
           </span>
           <span class="sandwich-comments">
-            2
+            <%= sandwich.comments.count  %>
             <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
           </span>
         </div>
@@ -17,6 +18,8 @@
     </div>
   <% end %>
 </div>
+<!-- End Top 9 Sandwiches -->
+
 <!-- Sandwich Details Modal -->
 <div class="js-sandwich-comments sandwich-comments-modal modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg">
