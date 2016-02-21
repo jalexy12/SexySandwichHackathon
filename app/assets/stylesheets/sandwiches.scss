@@ -44,6 +44,38 @@
 	margin: 0 2%;
 }
 
+.modal-body {
+	padding: 0;
+}
+
+.sandwich-modal-img {
+	height: 600px;
+	width: 100%;
+}
+
+.sandwich-modal-img-container {
+	padding: 0;
+	width: 50%;
+	display: inline-block;
+}
+
+.sandwich-comments-box {
+	width: 50%;
+	padding-right: 5px;
+	padding-left: 5px;
+	height: 600px;
+	float: right;
+	position: relative;
+}
+
+.comment-list {
+
+}
+
+.comment-item {
+	margin-top: 1%;
+}
+
 @media screen and (min-width: 769px) {
 	.sandwich-index-container { 
 		height: 400px;

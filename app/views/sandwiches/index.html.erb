@@ -1,6 +1,6 @@
 <div class="row">
   <% @sandwiches.each do | sandwich | %>
-    <div class="sandwich-index-container col-sm-12">
+    <div data-sandwich-name="<%= sandwich.name %>" data-sandwich-image="<%= sandwich.sandwich_image.url %>" class="sandwich-index-container col-sm-12">
       <img class="img-responsive sandwich-index-img" src="<%= sandwich.sandwich_image.url %>">
       <div class="sandwich-overlay">
         <div class="sandwich-text">
@@ -17,3 +17,29 @@
     </div>
   <% end %>
 </div>
+<!-- Sandwich Details Modal -->
+<div class="js-sandwich-comments sandwich-comments-modal modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="sandwich-modal-name modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <div class="sandwich-modal-img-container">
+            <img class="sandwich-modal-img">
+          </div>
+          <div class="sandwich-comments-box">
+            <ul class="text-center list-unstyled comment-list">
+              <li class="comment-item">Comment</li>
+              <li class="comment-item">Comment</li>
+              <li class="comment-item">Comment</li>
+              <li class="comment-item">Comment</li>
+              <li class="comment-item">Comment</li>
+              <li class="comment-item">Comment</li>
+            </ul>
+          </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

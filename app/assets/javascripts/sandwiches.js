@@ -6,4 +6,10 @@ $(document).on("ready", function(){
 	}).mouseleave(function(){
 		$(this).children(".sandwich-overlay").hide();
 	})
+
+	$(".sandwich-index-container").click(function(){
+		$(".sandwich-modal-name").text($(this).data("sandwich-name"))
+		$(".sandwich-modal-img").prop("src", $(this).data("sandwich-image"))
+		$(".js-sandwich-comments").modal("show")
+	})
 })
