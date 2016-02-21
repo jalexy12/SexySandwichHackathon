@@ -1,7 +1,5 @@
 class SandwichesController < ApplicationController
   before_action :set_sandwich, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :verify_authenticity_token, only: [:replace]
-
   # GET /sandwiches
   # GET /sandwiches.json
   def index
@@ -11,10 +9,7 @@ class SandwichesController < ApplicationController
   end
 
   def replace
-    @sandwich = Sandwich
-                    .all
-                    .select { | sandwich | !current_user.voted_for?(sandwich)}
-                    .first
+    @sandwich = Sandwich.find_unvoted_for(current_user).first
     render json: @sandwich
   end
 
