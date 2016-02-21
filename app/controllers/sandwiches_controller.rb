@@ -1,5 +1,6 @@
 class SandwichesController < ApplicationController
   before_action :set_sandwich, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   # GET /sandwiches
   # GET /sandwiches.json
   def index
