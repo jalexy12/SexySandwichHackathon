@@ -5,7 +5,7 @@ class SandwichesController < ApplicationController
   def index
     @sandwiches = Sandwich
                     .order("cached_votes_up DESC")
-                    .limit(10)
+                    .limit(9)
   end
 
   def replace
