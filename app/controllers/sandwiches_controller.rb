@@ -10,11 +10,6 @@ class SandwichesController < ApplicationController
                     .limit(9)
   end
 
-  def replace
-    @sandwich = Sandwich.find_unvoted_for(current_user).first
-    render json: @sandwich
-  end
-
   # GET /sandwiches/1
   # GET /sandwiches/1.json
   def show

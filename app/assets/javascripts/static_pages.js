@@ -21,7 +21,7 @@ function getSandwich(sandwichId) {
 	var leftSandwich = $(".js-btn-left").data("id")
 	$.ajax({
 		type: "POST",
-		url: "/sandwiches/replace",
+		url: "/api/sandwiches/replace",
 		success: function(response) {
 			console.log(response)
 			if (sandwichId == leftSandwich) {
@@ -39,7 +39,7 @@ function getSandwich(sandwichId) {
 
 function upLeftDownRight(goodSandwich, badSandwich) {
 	$.ajax({
-		url: "/sandwiches/vote",
+		url: "/api/sandwiches/vote",
 		type: "POST",
 		data: {
 			sandwich_good_id: goodSandwich,
@@ -57,7 +57,7 @@ function upLeftDownRight(goodSandwich, badSandwich) {
 
 function upRightDownLeft(goodSandwich, badSandwich) {
 	$.ajax({
-		url: "/sandwiches/vote",
+		url: "/api/sandwiches/vote",
 		type: "POST",
 		data: {
 			sandwich_good_id: goodSandwich,

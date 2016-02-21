@@ -1,4 +1,4 @@
-class SandwichVotesController < ApplicationController
+class Api::SandwichVotesController < ApplicationController
 	protect_from_forgery with: :null_session
 
 	def vote
