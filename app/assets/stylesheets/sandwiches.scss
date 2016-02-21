@@ -7,11 +7,41 @@
 }
 
 .sandwich-index-container {
+	position: relative;
 	border: 5px solid #fff;
 	border-radius: 3px;
 	padding: 0;
 	margin: 12px 1.5%;
+	z-index: 1;
+}
 
+.sandwich-overlay {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	display: none;
+}
+
+.sandwich-text {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	text-align: center;
+	z-index: 1005;
+	color: white;
+	font-size: 32px;
+	// right: 
+}
+
+.sandwich-likes {
+	margin: 0 2%;
+}
+
+.sandwich-comments {
+	margin: 0 2%;
 }
 
 @media screen and (min-width: 769px) {

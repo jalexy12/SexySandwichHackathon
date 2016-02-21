@@ -4,7 +4,7 @@ class SandwichesController < ApplicationController
   # GET /sandwiches.json
   def index
     @sandwiches = Sandwich
-                    .order(:cached_votes_up)
+                    .order("cached_votes_up DESC")
                     .limit(10)
   end
 
