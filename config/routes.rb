@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :sandwiches, only: [:index, :new, :create]
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+
   get '/' => 'static_pages#home'
   
   namespace :api do
