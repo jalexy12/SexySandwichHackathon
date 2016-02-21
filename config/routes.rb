@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post "/sandwiches/vote" => "sandwich_votes#vote"
 
   post "/sandwiches/replace" => "sandwiches#replace"
-
+  resources :sandwiches, only: [:index]
   devise_for :users
   get '/' => 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
