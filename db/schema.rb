@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221054743) do
+ActiveRecord::Schema.define(version: 20160221210322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 20160221054743) do
 
   add_index "comments", ["sandwich_id"], name: "index_comments_on_sandwich_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sandwich_ingredients", force: :cascade do |t|
+    t.integer  "ingredient_id"
+    t.integer  "sandwich_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "sandwich_ingredients", ["ingredient_id"], name: "index_sandwich_ingredients_on_ingredient_id", using: :btree
+  add_index "sandwich_ingredients", ["sandwich_id"], name: "index_sandwich_ingredients_on_sandwich_id", using: :btree
 
   create_table "sandwiches", force: :cascade do |t|
     t.string   "name"
@@ -81,4 +97,6 @@ ActiveRecord::Schema.define(version: 20160221054743) do
 
   add_foreign_key "comments", "sandwiches"
   add_foreign_key "comments", "users"
+  add_foreign_key "sandwich_ingredients", "ingredients"
+  add_foreign_key "sandwich_ingredients", "sandwiches"
 end
