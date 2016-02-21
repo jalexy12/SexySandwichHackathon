@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  post "/sandwiches/vote" => "sandwich_votes#vote"
+
+  post "/sandwiches/replace" => "sandwiches#replace"
+
+  devise_for :users
   get '/' => 'static_pages#home'
-  get '/oauth/connect' => "callbacks#connect"
-  get '/oauth/callback' => "callbacks#instagram"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
