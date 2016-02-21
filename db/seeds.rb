@@ -16,8 +16,9 @@ sandwiches.each do | sandwich |
 	puts "Creating sandwich: "
 	puts name
 	puts image
+	image_url = open("http://" + image)
 	Sandwich.create(name: name, 
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni libero omnis animi hic voluptates accusamus at ut iste facilis quia suscipit nemo voluptatum aliquam ipsam voluptate eius, nam praesentium. Autem.",
-			sandwich_image: open("http://" + image)
+			sandwich_image: image_url
 	)
 end

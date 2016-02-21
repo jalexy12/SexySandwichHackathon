@@ -27,10 +27,14 @@ gem 'puma'
 gem 'acts_as_votable', '~> 0.10.0'
 # Uploads
 gem 'carrierwave'
-
+# Production logs
 gem 'rails_12factor', group: :production
-
+# Realtime
 gem 'pusher'
+# Environment Variables
+gem "figaro"
+# AWS buckets
+gem "fog"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
