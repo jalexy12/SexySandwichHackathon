@@ -69,13 +69,20 @@
 }
 
 .comment-list {
-
+	height: 500px;
+	overflow: scroll;
 }
 
 .comment-item {
 	margin-top: 1%;
 }
 
+.comment-form {
+	width: 70%;
+	position: absolute;
+	bottom: 50px;
+	left: 15%;
+}
 @media screen and (min-width: 769px) {
 	.sandwich-index-container { 
 		height: 400px;
