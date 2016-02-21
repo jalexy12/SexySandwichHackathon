@@ -1,6 +1,6 @@
 <div class="row">
   <% @sandwiches.each do | sandwich | %>
-    <div data-sandwich-name="<%= sandwich.name %>" data-sandwich-image="<%= sandwich.sandwich_image.url %>" class="sandwich-index-container col-sm-12">
+    <div data-sandwich-id="<%= sandwich.id  %>" data-sandwich-name="<%= sandwich.name %>" data-sandwich-image="<%= sandwich.sandwich_image.url %>" class="sandwich-index-container col-sm-12">
       <img class="img-responsive sandwich-index-img" src="<%= sandwich.sandwich_image.url %>">
       <div class="sandwich-overlay">
         <div class="sandwich-text">

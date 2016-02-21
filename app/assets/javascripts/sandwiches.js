@@ -8,8 +8,25 @@ $(document).on("ready", function(){
 	})
 
 	$(".sandwich-index-container").click(function(){
+		getComments($(this).data("sandwich-id"));
 		$(".sandwich-modal-name").text($(this).data("sandwich-name"))
 		$(".sandwich-modal-img").prop("src", $(this).data("sandwich-image"))
 		$(".js-sandwich-comments").modal("show")
 	})
 })
+
+function getComments(sandwichId){
+	$.ajax({
+		url: `/api/sandwiches/${sandwichId}/comments/`,
+		success: populateComments,
+		error: commentError
+	})
+}
+
+function populateComments(response){
+	console.log(response);
+}
+
+function commentError(err){
+	console.log("Error", err);
+}

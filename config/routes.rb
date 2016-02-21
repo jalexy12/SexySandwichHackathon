@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :sandwiches, only: [:index]
   devise_for :users
   get '/' => 'static_pages#home'
+  namespace :api do
+    resources :sandwiches, only: [] do 
+      resources :comments, only: [:index, :create], controller: :sandwich_comments
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
