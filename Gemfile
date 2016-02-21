@@ -35,6 +35,9 @@ gem 'pusher'
 gem "figaro"
 # AWS buckets
 gem "fog"
+# ES6 features
+gem 'sprockets'
+gem 'sprockets-es6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
