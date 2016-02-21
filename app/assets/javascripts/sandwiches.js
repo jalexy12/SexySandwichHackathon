@@ -16,7 +16,24 @@ $(document).on("ready", function(){
 	})
 
 	$(".comment-form").on("submit", submitComment);
+	// Pusher events
+	var channel = pusher.subscribe("comments_channel");
+	channel.bind('comment_created', function(data) {
+		var commentAuthor = $('meta[name=current_user]').attr("content");
+		if (data.comment.user_id === Number(commentAuthor)){
+			updateCount(data);
+			return
+		} else {
+			createComment(data.comment);
+			updateCount(data);
+		}
+	});
 })
+
+function updateCount(data){
+	var $mySandwich = $(`[data-sandwich-id~=${data.comment.sandwich_id}]`);
+	$mySandwich.find('.sandwich-comments').text(data.count)
+}
 
 function submitComment(event){
 	event.preventDefault();
@@ -58,10 +75,11 @@ function populateComments(response){
 
 function createComment(comment){
 	'use strict'
+	console.log(comment)
 	let html = `
 		<li class="comment-item">${comment.content}</li>
 	`
-	$(".comment-list").append(html);
+	$(".comment-list").prepend(html);
 }
 
 function commentError(err){
