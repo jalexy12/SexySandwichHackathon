@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   post "/sandwiches/vote" => "sandwich_votes#vote"
-
   post "/sandwiches/replace" => "sandwiches#replace"
+
   resources :sandwiches, only: [:index, :new, :create]
+
   devise_for :users
   get '/' => 'static_pages#home'
+  
   namespace :api do
     resources :sandwiches, only: [] do 
       resources :comments, only: [:index, :create], controller: :sandwich_comments

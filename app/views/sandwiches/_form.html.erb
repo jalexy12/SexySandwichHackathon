@@ -1,5 +1,5 @@
 <div class="new-sandwich-form text-center">
-  <h1>New Sandwich</h1>
+  <h1>Add A New Sandwich</h1>
 
   <%= form_for @sandwich,  :html => { :multipart => true } do |f| %>
     <% if @sandwich.errors.any? %>
@@ -30,7 +30,7 @@ glyphicon glyphicon-camera", id: "sandwich[sandwich_image]", data: { multiple_ca
       <span class="files-picked"></span>
     </div>
     <div class="form-group">
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-new-sandwich" %>
     </div>
   <% end %>
 </div>
