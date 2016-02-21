@@ -1,0 +1,62 @@
+.registration-form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.registration-form input:focus {
+	border-color: yellow;
+}
+
+.reg-submit {
+	background-color: #151617;
+}
+
+.reg-sign-up {
+	margin-bottom: 20px;
+}
+
+.new-sandwich-form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.new-sandwich-form 
+	input:focus,
+.new-sandwich-form
+	textarea:focus {
+	border-color: yellow;
+}
+
+.sandwich-file-input {
+	margin: 10px auto;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.sandwich-file-input + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sandwich-file-input:focus + label,
+.sandwich-file-input + label:hover {
+    background-color: white;
+    color: black;
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.files-picked {
+	display: block;
+	font-weight: bold;
+	color: white;
+	margin-top: 6px;
+}
